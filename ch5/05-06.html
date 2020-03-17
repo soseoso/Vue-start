@@ -1,0 +1,51 @@
+<html lang="en">
+<!--
+    05-05.html 을 개선한 방법.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-05</title>
+    <style>
+        .set1 {
+            background-color: aqua;
+            color: purple;
+        }
+        
+        .set2 {
+            text-align: center;
+            width: 120px;
+        }
+        
+        .set3 {
+            border: sandybrown dashed 1px;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="example">
+        <button id="btn1" v-bind:class="mystyle">버튼1</button>
+        <p>
+            <input type="checkbox" v-model="mystyle.set1" value="true">set1 디자인<br/>
+            <input type="checkbox" v-model="mystyle.set2" value="true">set1 디자인<br/>
+            <input type="checkbox" v-model="mystyle.set3" value="true">set1 디자인<br/>
+        </p>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                mystyle: {
+                    s1: false,
+                    s2: false,
+                    s3: false
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

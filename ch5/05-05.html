@@ -1,0 +1,61 @@
+<html lang="en">
+<!--
+    css 클래스를 바인딩하기 위해서.
+    v-bind:class 첫 적용
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-05</title>
+    <style>
+        .set1 {
+            /* 클래스 이름 set1 */
+            background-color: aqua;
+            color: purple;
+        }
+        
+        .set2 {
+            /* 클래스 이름 set2 */
+            text-align: center;
+            width: 120px;
+        }
+        
+        .set3 {
+            /* 클래스 이름 set3 */
+            border: sandybrown dashed 1px;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<!-- 중요! v-bind:class를 이용해 클래스를 적용할 떄는 boolean 값을 이용해 지정합니다. -->
+
+<body>
+    <div id="example">
+        <!-- button 태그에 set1, set2, set3 클래스를 적용함. 바인딩을 통해서. -->
+        <button id="btn1" v-bind:class="{set1:s1, set2:s2, set3:s3}">버튼1</button>
+        <p>
+            <!-- 체크하면, 각각 model이 true로 바뀐다. -->
+            <!-- v-model 디렉티브를 이용해 양방향 바인딩 -->
+            <input type="checkbox" v-model="s1" value="true">set1 디자인<br/>
+            <input type="checkbox" v-model="s2" value="true">set1 디자인<br/>
+            <input type="checkbox" v-model="s3" value="true">set1 디자인<br/>
+        </p>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                // 클래스 set1, set2, set3 각각에 데이터 값으로 들어가는 초기값 설정.
+                // s1, s2, s3은 boolean 값이다.
+                // -> '클래스 지정 여부'를 결정한다.
+                s1: false,
+                s2: false,
+                s3: false
+            }
+        })
+    </script>
+</body>
+
+</html>

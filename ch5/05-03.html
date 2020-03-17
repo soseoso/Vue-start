@@ -1,0 +1,38 @@
+<html lang="en">
+<!-- 
+    비추천하는 방법.
+    코드를 유지 보수하기 힘들다.
+    가능하다면 앞에서 살펴본 스타일 객체를 
+    직접 바인딩 하는 방법 사용하기.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-03</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="example">
+        <!-- v-bind:style 디렉티브를 사용한 방법이다. -->
+        <div :style="{backgroundColor: a.bc, border: a.bd, width: a.w+'px', height: a.h+'px'}">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                a: {
+                    bc: 'yellow',
+                    bd: 'solid 1px gray',
+                    w: 200,
+                    h: 100
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
