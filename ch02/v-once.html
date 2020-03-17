@@ -1,0 +1,23 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src='https://unpkg.com/vue@2.5.16/dist/vue.js'></script>
+</head>
+
+<body>
+    <div id='example'>
+        <span v-once>{{ message }}</span>
+    </div>
+    <script type='text/javascript'>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                message: 'Hello World'
+            }
+        })
+    </script>
+</body>
+
+</html>
